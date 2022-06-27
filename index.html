@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand">
+                <i><svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M18.8293 2H19C21.7614 2 24 4.23858 24 7V23C24 25.7614 21.7614 28 19 28H5C2.23858 28 0 25.7614 0 23V7C0 4.23858 2.23858 2 5 2H5.17071C5.58254 0.834808 6.69378 0 8 0H16C17.3062 0 18.4175 0.834808 18.8293 2ZM5.17071 4H5C3.34315 4 2 5.34315 2 7V23C2 24.6569 3.34315 26 5 26H19C20.6569 26 22 24.6569 22 23V7C22 5.34315 20.6569 4 19 4H18.8293C18.4175 5.16519 17.3062 6 16 6H8C6.69378 6 5.58254 5.16519 5.17071 4ZM7 3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3C17 3.55228 16.5523 4 16 4H8C7.44772 4 7 3.55228 7 3Z"
+                            fill="#5050C5" />
+                    </svg>
+                </i>
+                Resume Builder
+            </a>
+            <div class="d-flex mt-3 mt-md-0">
+                <button class="btn btn-outline-secondary me-2" id="import-btn" type="button">Import</button>
+                <a href="C:\Users\SHUBHAM BANSAL\Desktop\toodle\sample_resume.pdf" download id="linking" style="color:white"><button class="btn btn-danger" id="export-btn" type="button" style="color:white">Export</button></a>
+            </div>
+        </div>
+    </nav>
+    <hr>
+
+    <div class="container mt-3" id="saving1">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="d-flex justify-content-center p-3">
+                    <div class="rounded-circle bg-light profile-div d-flex justify-content-center">
+                        <div class="d-flex justify-content-center profile-text-div">
+						
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<input type="file"  id="photo" name="photo" size="511" accept="image/png, image/jpeg">
+            <div class="col-md-5">
+                <div class="mb-3">
+                    <label for="name-input" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name-input">
+                </div>
+                <div class="mb-3">
+                    <label for="email-input" class="form-label">Email-ID</label>
+                    <input type="email" class="form-control" id="email-input">
+                </div>
+            </div>
+            <div class="col-md-5 ">
+                <div class="mb-3">
+                    <label for="bio-input" class="form-label">Short Bio</label>
+                    <textarea class="form-control" id="bio-input" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-5 d-flex justify-content-center d-md-block">
+                <a href="nextPage.html"><button type="button"
+                    class="btn primary-btn" >Save
+                </button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container exp-section mt-5">
+        <nav class="d-flex justify-content-center mb-5">
+            <div class="nav-tab">
+            <div class="nav d-flex justify-content-around" id="nav-tab" role="tablist">
+                <button class="nav-item border-0 me-1 me-md-5 tab-element active" id="nav-education-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-education" type="button" role="tab" aria-controls="nav-education"
+                    aria-selected="true">Education (<span id="edu-no">2</span>)</button>
+                <button class="nav-item border-0 me-1 me-md-5 tab-element" id="nav-work-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-work" type="button" role="tab" aria-controls="nav-work"
+                    aria-selected="false">Work Experiences (<span id="work-no">2</span>)</button>
+                <button class="nav-item border-0 mt-2 mt-md-0 tab-element" id="nav-achievement-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-achievement" type="button" role="tab" aria-controls="nav-achievement"
+                    aria-selected="false">Achievements (<span id="achievement-no">2</span>)</button>
+            </div>
+        </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-education" role="tabpanel"
+                aria-labelledby="nav-education-tab" tabindex="0">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary add-btn" data-bs-toggle="modal" data-bs-target="#edu-modal" id="add-edu" type="button">Add new</button>
+                </div>
+
+                <div class="modal fade" id="edu-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="edu-modal-title" >Add new education</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="education-form" class="row">
+                            <div class="mb-3 col-12">
+                                <label for="institute-input" class="form-label">Institute</label>
+                                <input type="text" class="form-control" id="institute-input">
+                              </div>
+                            <div class="mb-3 col-12">
+                                <label for="degree-input" class="form-label">Degree</label>
+                                <input type="text" class="form-control" id="degree-input">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="start-date-input" class="form-label">Start Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="end-date-input" class="form-label">End Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                              <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control"  rows="4"></textarea>
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer me-auto">
+                          <button type="button" class="btn primary-btn" id="edu-save" data-bs-dismiss="modal">Save</button>
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+
+            <div class="tab-pane fade" id="nav-work" role="tabpanel" aria-labelledby="nav-work-tab" tabindex="0">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary add-btn" data-bs-toggle="modal" data-bs-target="#work-modal" id="add-work" type="button">Add new</button>
+                </div>
+                <div class="modal fade" id="work-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="work-modal-title">Add new work experience</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="work-form" class="row">
+                            <div class="mb-3 col-12">
+                                <label for="company-input" class="form-label">Company</label>
+                                <input type="text" class="form-control" id="company-input">
+                              </div>
+                            <div class="mb-3 col-12">
+                                <label for="role-input" class="form-label">Role</label>
+                                <input type="text" class="form-control" id="role-input">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Start Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="work-end-date-input" class="form-label">End Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                              <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" rows="4"></textarea>
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer me-auto">
+                          <button type="button" class="btn primary-btn" id="work-save" data-bs-dismiss="modal">Save</button>
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="tab-pane fade" id="nav-achievement" role="tabpanel" aria-labelledby="nav-contact-achievemnet"
+                tabindex="0">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary add-btn" data-bs-toggle="modal" data-bs-target="#achievement-modal" id="add-achievement" type="button">Add new</button>
+                </div>
+                <div class="modal fade" id="achievement-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Add new achievement</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row">
+                            <div class="mb-3 col-12">
+                                <label class="form-label">Title</label>
+                                <input type="text" class="form-control">
+                              </div>
+                            <div class="mb-3 col-12">
+                                <label class="form-label">Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                              <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" rows="4"></textarea>
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer me-auto">
+                          <button type="button" class="btn primary-btn" data-bs-dismiss="modal" id="achievement-save">Save</button>
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
